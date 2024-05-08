@@ -3,7 +3,7 @@ from sys import stdout
 from time import sleep
 from termcolor import colored
 
-__version__ =0.023
+__version__ =0.322
 
 #
 #
@@ -14,8 +14,8 @@ __version__ =0.023
 # / __/ / /_/ / /|  / /___   
 #/_/    \____/_/ |_/\____/ 
 #
-def sizeof_fmt(num, suffix='B'):
-    for unit in [' ',' Ki',' Mi',' Gi',' Ti',' Pi',' Ei',' Zi']:
+def sizeof_fmt(num, suffix='b'):
+    for unit in [' ',' K',' M',' G',' T',' P',' E',' Z']:
         if abs(num) < 1024.0:
             return "%3.2f%s%s" % (num, unit, suffix)
         num /= 1024.0
@@ -32,7 +32,12 @@ def sizeof_fmt(num, suffix='B'):
 #
 
 def str2bool(v):
-    return v.lower() in ("yes", "true", "t", "1","si","oui","SI","YES","TRUE")
+    if v is not None:
+        b=str(v)
+        return b.lower() in ('yes', 'true', 't', '1','si','oui','y')
+    else:
+        return False
+    
 
 
 #
@@ -198,6 +203,4 @@ if __name__ == '__main__':
     print(getAsciiInfo(True,None,None))
     print(getAsciiInfo(False,'white',None))
     print(getAsciiInfo(False,None,['reverse', 'blink']))
-    
-    
     

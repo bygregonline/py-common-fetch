@@ -1,7 +1,7 @@
 import time
 
 from termcolor import colored
-
+__version__ =0.322
 
 class elapsedtime(object):
     '''
@@ -67,4 +67,6 @@ class elapsedtime(object):
     
 
         
-        
+
+
+
