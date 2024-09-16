@@ -1,4 +1,4 @@
-from numpy import NaN
+from numpy import nan
 from sys import stdout
 from time import sleep
 from termcolor import colored
@@ -10,9 +10,9 @@ __version__ =0.322
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
 def sizeof_fmt(num, suffix='b'):
     for unit in [' ',' K',' M',' G',' T',' P',' E',' Z']:
@@ -26,9 +26,9 @@ def sizeof_fmt(num, suffix='b'):
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
 
 def str2bool(v):
@@ -37,7 +37,7 @@ def str2bool(v):
         return b.lower() in ('yes', 'true', 't', '1','si','oui','y')
     else:
         return False
-    
+
 
 
 #
@@ -45,12 +45,12 @@ def str2bool(v):
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
 
-def alingLeft(word,size):    
+def alingLeft(word,size):
     return word+' '*(size-len(word))
 
 #
@@ -58,9 +58,9 @@ def alingLeft(word,size):
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
 def equalsIgnoreCase(a,b):
     if (a.lower() == b.lower()):
@@ -71,14 +71,14 @@ def equalsIgnoreCase(a,b):
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
 def percentageToFloat(number):
-    aux = NaN
-    try:      
-        if aux is not None:  
+    aux = nan
+    try:
+        if aux is not None:
             if isinstance(number, str):
                 aux = float(number.strip('%'))/100
     except Exception as e:
@@ -90,46 +90,46 @@ def percentageToFloat(number):
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-# 
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
+#
 
 def advance(i,m):
     return '#'*i+' '*(m-i)
-    
+
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-#   
-    
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
+#
+
 def beep():
     print('\a', end='')
-    
+
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-#  
-    
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
+#
+
 def showAdvance(msg='', total=10,i = 1,outMessage=''):
     s = '[%s] %d %% '+msg+'%s\r'
     stdout.write(s % (advance(int(i/(total/10)),10),int(i/(total/100)),outMessage))
     stdout.flush()
-    
-    
+
+
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-#   
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
+#
 def getAsciiInfo(logo=True,withColor=None,attrs=None):
     s="""
            ___________________________________
@@ -143,19 +143,19 @@ def getAsciiInfo(logo=True,withColor=None,attrs=None):
                      ||    ||
 
        """
-       
+
     s2="""
-    
-      /^       /^^^     /^^  /^^      /^           /^^     /^^     /^^  /^^ 
-     /^ ^^     /^ /^^   /^^  /^^     /^ ^^      /^^   /^^  /^^     /^^  /^^ 
-    /^  /^^    /^^ /^^  /^^  /^^    /^  /^^    /^^         /^^     /^^  /^^ 
-   /^^   /^^   /^^  /^^ /^^  /^^   /^^   /^^   /^^         /^^^^^^ /^^  /^^ 
-  /^^^^^^ /^^  /^^   /^ /^^  /^^  /^^^^^^ /^^  /^^         /^^     /^^  /^^ 
- /^^       /^^ /^^    /^ ^^  /^^ /^^       /^^  /^^   /^^  /^^     /^^  /^^ 
+
+      /^       /^^^     /^^  /^^      /^           /^^     /^^     /^^  /^^
+     /^ ^^     /^ /^^   /^^  /^^     /^ ^^      /^^   /^^  /^^     /^^  /^^
+    /^  /^^    /^^ /^^  /^^  /^^    /^  /^^    /^^         /^^     /^^  /^^
+   /^^   /^^   /^^  /^^ /^^  /^^   /^^   /^^   /^^         /^^^^^^ /^^  /^^
+  /^^^^^^ /^^  /^^   /^ /^^  /^^  /^^^^^^ /^^  /^^         /^^     /^^  /^^
+ /^^       /^^ /^^    /^ ^^  /^^ /^^       /^^  /^^   /^^  /^^     /^^  /^^
 /^^         /^^/^^      /^^   ^^/^^         /^^   /^^^^    /^^     /^^  /^^
        """
-    
-       
+
+
     if logo:
         if isinstance(withColor,str):
             if isinstance(attrs,list):
@@ -164,8 +164,8 @@ def getAsciiInfo(logo=True,withColor=None,attrs=None):
                 return colored(s2, withColor)
         else:
             return s2
-        
-    else:  
+
+    else:
         if isinstance(withColor,str):
             if isinstance(attrs,list):
                 return colored(s, withColor, attrs=attrs)
@@ -173,29 +173,29 @@ def getAsciiInfo(logo=True,withColor=None,attrs=None):
                 return colored(s, withColor)
         else:
             return s
-            
-        
+
+
+
+
+#
+#
+#   / ____/ / / / | / / ____/
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
+#
+
+
+
 
 
 #
 #
 #   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-#  
-
-
-
-   
-
+#  / /_  / / / /  |/ / /
+# / __/ / /_/ / /|  / /___
+#/_/    \____/_/ |_/\____/
 #
-#
-#   / ____/ / / / | / / ____/
-#  / /_  / / / /  |/ / /     
-# / __/ / /_/ / /|  / /___   
-#/_/    \____/_/ |_/\____/ 
-#   
 if __name__ == '__main__':
     #print(equalsIgnoreCase('chench','ChencH0'))
     print(getAsciiInfo(True,'red',['bold']))
@@ -203,4 +203,4 @@ if __name__ == '__main__':
     print(getAsciiInfo(True,None,None))
     print(getAsciiInfo(False,'white',None))
     print(getAsciiInfo(False,None,['reverse', 'blink']))
-    
+
